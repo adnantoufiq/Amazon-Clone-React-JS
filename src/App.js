@@ -1,12 +1,12 @@
-import "./App.css";
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Checkout from "./Checkout";
+import { auth } from "./firebase";
 import Header from "./Header";
 import Home from "./Home";
-import Checkout from "./Checkout";
 import Login from "./Login";
 import { useStateValue } from "./StateProvider";
-import { auth } from "./firebase";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -39,6 +39,8 @@ function App() {
   console.log("user is >>", user);
 
   return (
+
+   //for router  //  
     <Router>
       <div className="app">
         <Switch>
